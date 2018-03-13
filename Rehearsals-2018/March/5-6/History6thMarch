@@ -1,0 +1,628 @@
+List[ [ 2424.919086903, 'me', "Tdef(\\sequence).play" ], [ 2422.227152119, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop;
+			\"halt\".postln;
+			d[\"gesture\"][[11,3,6]].choose.play;
+			rrand(5,20).wait;
+			[d[\\originalPerc],0,d[\\clickPitch],d[\\sparse]].choose.();
+}})
+)" ], [ 2420.619800786, 'me', "~perc.stop" ], [ 2410.361063244, 'me', "Tdef(\\sequence).stop" ], [ 2363.4688006, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait.postln;
+			~perc.stop;
+			\"halt\".postln;
+			d[\"gesture\"][[11,3,6]].choose.play;
+			rrand(5,20).wait;
+			[d[\\originalPerc],0,d[\\clickPitch]].choose.();
+			~perc.play;
+}})
+)" ], [ 2354.751005287, 'me', "(
+d[\\originalPerc] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+};
+d[\\clickPitch] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[7!3,1].flat
+		,[7!4,1].flat
+		,[7!5,1].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5,
+	\\rate,Pseq([1,1.01,1.02],inf)
+)
+};
+d[\\sparse] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[4].flat
+		,[4].flat
+		,[4!3,12].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l*2,
+	\\amp,0.5,
+	\\rate,Pseq([1,1.01,1.02],inf)
+)
+}
+)" ], [ 2344.782280649, 'me', "d[\"perc\"][12].play" ], [ 2343.431691425, 'me', "d[\"perc\"][12].play" ], [ 2342.200733071, 'me', "d[\"perc\"][10].play" ], [ 2340.874709991, 'me', "d[\"perc\"][9].play" ], [ 2330.941849968, 'me', "d[\"perc\"][4].play" ], [ 2330.56854284, 'me', "d[\"perc\"][4].play" ], [ 2330.106173336, 'me', "d[\"perc\"][4].play" ], [ 2328.686718703, 'me', "d[\"perc\"][4].play" ], [ 2328.327953867, 'me', "d[\"perc\"][4].play" ], [ 2328.016402855, 'me', "d[\"perc\"][4].play" ], [ 2326.615463488, 'me', "d[\"perc\"][4]" ], [ 2309.516813981, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait.postln;
+			~perc.stop(0.4);
+			\"halt\".postln;
+			d[\"gesture\"][[11,3,6]].choose.play;
+			rrand(5,20).wait;
+			[d[\\originalPerc],0,d[\\clickPitch]].choose.();
+			~perc.play;
+}})
+)" ], [ 2254.245103488, 'me', "Tdef(\\sequence).play" ], [ 2250.455089745, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(0.4);
+			\"halt\".postln;
+			d[\"gesture\"][[11,3,6]].choose.play;
+			11.wait;
+			[d[\\originalPerc],0,d[\\clickPitch]].choose.();
+			~perc.play;
+}})
+)" ], [ 2185.106143967, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(0.4);
+			\"halt\".postln;
+			d[\"gesture\"][[11,3,6]].choose.play;
+			11.wait;
+			[d[\\originalPerc],0,d[\\clickPitch]].choose.();
+			~perc.play;
+}})
+)" ], [ 2183.625564169, 'me', "Tdef(\\sequence).play" ], [ 2161.890234458, 'me', "~kick = Pbind(\\instrument,\\bplay,\\buf,d[\"kick\"][0],\\dur,2,\\amp,0.8)" ], [ 2157.922436285, 'me', "~kick = Pbind(\\instrument,\\bplay,\\buf,d[\"kick\"][0],\\dur,2)" ], [ 2151.897180207, 'me', "~kick.play" ], [ 2147.078378483, 'me', "~k.play" ], [ 2145.179850017, 'me', "~kick = Pbind(\\instrument,\\bplay,\\buf,d[\"kick\"][0],\\dur,2)" ], [ 2041.611261458, 'me', "~quiet2.play" ], [ 2040.382742735, 'me', "~quiet.play" ], [ 2035.733848307, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(0.4);
+			d[\"gesture\"][[11,3,6]].choose.play;
+			11.wait;
+			[d[\\originalPerc],0,d[\\clickPitch]].choose.();
+			~perc.play;
+}})
+)" ], [ 2019.223372714, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2019.072769969, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.906578782, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.75434747, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.623479503, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.499386452, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.363083583, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2018.097179997, 'me', "[0,d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 2000.094829989, 'me', "[d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 1999.045749346, 'me', "[d[\\originalPerc],d[\\clickPitch]].choose.()" ], [ 1991.111079273, 'me', "{[d[\\originalPerc],d[\\clickPitch]].choose}.()" ], [ 1988.264422306, 'me', "{[d[\\originalPerc],d[\\clickPitch]].choose}.()" ], [ 1980.798746903, 'me', "d[\\originalPerc].()" ], [ 1978.089565542, 'me', "d[\\originalPerc] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+};" ], [ 1969.74423013, 'me', "d[\\originalPerc]" ], [ 1964.252665609, 'me', "{[d[\\originalPerc],d[\\clickPitch]].choose}.()" ], [ 1962.520336012, 'me', "{[d[\\originalPerc],d[\\clickPitch]].choose}.()" ], [ 1960.634172146, 'me', "{[d[\\originalPerc],d[\\clickPitch]].choose}.()" ], [ 1956.413266109, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1955.945204492, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1955.4891108, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1954.999844031, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1954.477047866, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1953.601811814, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1952.641536043, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1951.66479439, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1950.590848038, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1948.022799795, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1943.630408999, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}.()" ], [ 1940.713171895, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}" ], [ 1939.666962844, 'me', "{[d[\\originalPerc].(),d[\\clickPitch].()].choose}" ], [ 1904.274542209, 'me', "(
+d[\\originalPerc] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+};
+d[\\clickPitch] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[7!3,1].flat
+		,[7!4,1].flat
+		,[7!5,1].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5,
+	\\rate,Pseq([1,1.01,1.02],inf)
+)
+}
+)" ], [ 1869.166726529, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[7!3,1].flat
+		,[7!4,1].flat
+		,[7!5,1].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5,
+	\\rate,Pseq([1,1.01,1.02],inf)
+)
+)" ], [ 1816.639327976, 'me', "~perc.play" ], [ 1815.503649617, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[7!3,1].flat
+		,[7!4,1].flat
+		,[7!5,1].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5,
+	\\rate,Pseq([1,0.9,0.8,0.7],inf)
+)
+)" ], [ 1761.762050176, 'me', "d[\"perc\"][7].play" ], [ 1761.333694411, 'me', "d[\"perc\"][7].play" ], [ 1761.02173946, 'me', "d[\"perc\"][7].play" ], [ 1760.674382939, 'me', "d[\"perc\"][7].play" ], [ 1760.247255217, 'me', "d[\"perc\"][7].play" ], [ 1731.110467892, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(0.4);
+			d[\"gesture\"][[11,3,6]].choose.play;
+			11.wait;
+			~perc.play;
+}})
+)" ], [ 1724.956187219, 'me', "d[\"gesture\"][[11,3,6].choose].play;" ], [ 1724.491404113, 'me', "d[\"gesture\"][[11,3,6].choose].play;" ], [ 1724.166266659, 'me', "d[\"gesture\"][[11,3,6].choose].play;" ], [ 1710.177059804, 'me', "~quiet2.stop(4)" ], [ 1707.352805487, 'me', "~quiet2.stop(40)" ], [ 1623.256617228, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(0.4);
+			d[\"gesture\"][11,3,6].choose.play;
+			11.wait;
+			~perc.play;
+}})
+)" ], [ 1611.268495122, 'me', "d[\"gesture\"][3].play" ], [ 1610.153700632, 'me', "d[\"gesture\"][4].play" ], [ 1607.505478995, 'me', "d[\"gesture\"][6].play" ], [ 1605.997269387, 'me', "d[\"gesture\"][8].play" ], [ 1604.968515803, 'me', "d[\"gesture\"][18].play" ], [ 1603.615252865, 'me', "d[\"gesture\"][10].play" ], [ 1600.64146197, 'me', "d[\"gesture\"][11].play" ], [ 1596.364644072, 'me', "d[\"gesture\"][11]" ], [ 1587.682695486, 'me', "~perc.stop" ], [ 1529.423195477, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		loop{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(1);
+			d[\"gesture\"][11].play;
+			11.wait;
+			~perc.play;
+}})
+)" ], [ 1505.905537711, 'me', "Tdef(\\sequence).play" ], [ 1502.804023513, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		d[\\originalPerc].();
+		{
+			~perc.play;
+			rrand(30,60).wait;
+			~perc.stop(1);
+			d[\"gesture\"][11].play;
+			11.wait;
+			~perc.play;
+}})
+)" ], [ 1391.31993773, 'me', "Tdef(\\sequence).play" ], [ 1387.356354292, 'me', "(
+//sequencing the playback of pattterns and gaps
+Tdef(\\sequence,
+	{
+		loop{
+			d[\\originalPerc].();
+			~perc.play;
+			30.wait;
+			~perc.stop;
+			d[\"gesture\"][11].play;
+			11.wait;
+}})
+)" ], [ 1284.367549158, 'me', "d[\"gesture\"][10].play" ], [ 1282.351592791, 'me', "d[\"gesture\"][8].play" ], [ 1280.682656854, 'me', "d[\"gesture\"][4].play" ], [ 1278.219645711, 'me', "d[\"gesture\"][0].play" ], [ 1266.505608143, 'me', "(
+~quiet2 = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][1],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(5,20),
+	\\rel,Pwhite(1,5),
+	\\dur,Pwhite(4,32),
+	\\rate,1
+)
+)" ], [ 1223.547997619, 'me', "~perc.stop" ], [ 1220.672400521, 'me', "d[\\originalPerc].()" ], [ 1220.083807071, 'me', "d[\\originalPerc].()" ], [ 1219.520774848, 'me', "d[\\originalPerc].()" ], [ 1219.052409235, 'me', "d[\\originalPerc].()" ], [ 1218.42213908, 'me', "d[\\originalPerc].()" ], [ 1209.077612374, 'me', "(
+d[\\originalPerc] = {
+	~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+}
+)" ], [ 1161.202005689, 'me', "~quiet.stop" ], [ 1113.817782317, 'me', "(
+~quiet2 = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][1],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5),
+	\\dur,Pwhite(4,32),
+	\\rate,1
+)
+)" ], [ 1095.253224807, 'me', "~quiet2.play" ], [ 1089.359467474, 'me', "(
+~quiet2 = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][1],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5),
+	\\rate,1
+)
+)" ], [ 1084.513877334, 'me', "(
+~quiet2 = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][0],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5),
+	\\rate,1
+)
+)" ], [ 1070.24039927, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 1065.816838887, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc[0] = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 1063.583436845, 'me', "~perc[2].clear" ], [ 1051.392954717, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc[0] = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 1044.527886673, 'me', "~perc[2] = \\filterIn -> {|in| FreeVerb.ar(in)}" ], [ 1038.276132357, 'me', "~perc = \\filterIn -> {|in| FreeVerb.ar(in)}" ], [ 1028.913278724, 'me', "~perc = \\filterIn -> {|in| FreeVerb.ar(in)}" ], [ 998.96712102799, 'me', "~perc.play" ], [ 995.330673107, 'me', "(
+~quiet = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][0],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5),
+	\\rate,1
+)
+)" ], [ 975.654113953, 'me', "(
+~quiet = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][0],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5),
+	\\rate,Pwhite(0.8,1)
+)
+)" ], [ 955.102098562, 'me', "(
+~quiet = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][0],
+	\\amp,Pwhite(0.1,0.4),
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5)
+)
+)" ], [ 901.858406332, 'me', "~perc.stop(10)" ], [ 891.132277155, 'me', "~quiet.play" ], [ 887.92105462, 'me', "(
+~quiet = Pbind(\\instrument,\\vplay,
+	\\buf,d[\"longSound\"][0],
+	\\amp,0.1,
+	\\pos,Pwhite(0,0.5),
+	\\atk,Pwhite(1,5),
+	\\sus,Pwhite(1,10),
+	\\rel,Pwhite(1,5)
+)
+)" ], [ 808.283222834, 'me', "//so the original sounds occasionally come back and then are interrupted by other sounds, particularly that nice click." ], [ 727.56379791399, 'me', "~perc.play" ], [ 725.784080004, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2,7!2].flat
+		,[8!8,9,4,5,7!2].flat
+		,[3!5,13,3!4,3,3!4,2,7!2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 713.983683247, 'me', "d[\"perc\"][7].play" ], [ 712.36154159499, 'me', "d[\"perc\"][7].play" ], [ 711.33286643398, 'me', "d[\"perc\"][8].play" ], [ 710.31277861298, 'me', "d[\"perc\"][6].play" ], [ 709.72032271398, 'me', "d[\"perc\"][5].play" ], [ 709.21371527598, 'me', "d[\"perc\"][4].play" ], [ 708.62063875099, 'me', "d[\"perc\"][3].play" ], [ 708.16829385198, 'me', "d[\"perc\"][2].play" ], [ 707.70507236899, 'me', "d[\"perc\"][1].play" ], [ 707.17804085798, 'me', "d[\"perc\"][0].play" ], [ 704.775911384, 'me', "d[\"perc\"][5].play" ], [ 702.32277119, 'me', "d[\"perc\"][5]" ], [ 696.836314466, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10,1!3,2].flat
+		,[8!8,9,4,5].flat
+		,[3!5,13,3!4,3,3!4,2].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 682.666854518, 'me', "d[\"perc\"][2].play" ], [ 676.80403156398, 'me', "~perc.stop" ], [ 608.315821486, 'me', "~perc.play" ], [ 606.51737288799, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10].flat
+		,[8!8,9,4,5].flat
+		,[3!5,13,3!4,3].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 602.654186995, 'me', "d[\"perc\"][5].play" ], [ 601.68181666499, 'me', "d[\"perc\"][4].play" ], [ 586.34808306998, 'me', "d[\"perc\"][4].play" ], [ 585.68642581798, 'me', "d[\"perc\"][5].play" ], [ 584.63798631399, 'me', "d[\"perc\"][4].play" ], [ 583.95495529499, 'me', "d[\"perc\"][5].play" ], [ 583.08796356799, 'me', "d[\"perc\"][4].play" ], [ 582.28387601598, 'me', "d[\"perc\"][5].play" ], [ 581.381876078, 'me', "d[\"perc\"][6].play" ], [ 564.88660186398, 'me', "d[\"perc\"][9].play" ], [ 560.814473014, 'me', "d[\"perc\"][8].play" ], [ 541.75806503199, 'me', "d[\"perc\"][3].play" ], [ 540.36522745399, 'me', "d[\"perc\"][4].play" ], [ 539.81802414398, 'me', "d[\"perc\"][3].play" ], [ 538.925324879, 'me', "d[\"perc\"][3].play" ], [ 537.853765037, 'me', "d[\"perc\"][5].play" ], [ 536.39720799398, 'me', "d[\"perc\"][0].play" ], [ 533.36155735998, 'me', "d[\"perc\"][1].play" ], [ 510.25328324499, 'me', "d[\"perc\"][10].play" ], [ 508.71125862998, 'me', "~perc.stop" ], [ 472.12868049598, 'me', "~perc.play" ], [ 469.681417468, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([
+		[1!11,10].flat
+		,8
+		,[3!5,13].flat
+	],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 420.80386392199, 'me', "[[1!11,10],[3!5,13]].flatten" ], [ 418.31219136398, 'me', "[[1!11,10],[3!5,13]]" ], [ 388.654039683, 'me', "d[\"perc\"][10].play" ], [ 384.83166838399, 'me', "d[\"perc\"][11].play" ], [ 378.755730982, 'me', "~perc.stop" ], [ 362.17294074199, 'me', "~perc.play" ], [ 359.714503197, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([1,8,[3!5,13].flat],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 333.67712665899, 'me', "d[\"perc\"][13].play" ], [ 330.63230037599, 'me', "~perc.stop" ], [ 319.23939870598, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([1,8,[3,3,3,3,13]],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 307.917226547, 'me', "3!5" ], [ 290.76910884399, 'me', "~perc.play" ], [ 287.87275660899, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Place([1,8,[3!5,13]],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 254.45642866899, 'me', "d[\"perc\"][13].play" ], [ 252.894526638, 'me', "d[\"perc\"][13]" ], [ 248.81364041899, 'me', "~perc.stop" ], [ 240.16544789899, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1],
+		0.1: #[0.75]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Pseq([1,8,3],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 179.63520087299, 'me', "StageLimiter.activate" ], [ 178.560045272, 'me', "~perc.play" ], [ 176.32593571898, 'me', "(
+l = Prewrite(0.25,
+		( 
+			0.25: #[0.25,0.25,0.75],
+			0.75: #[0.125,0.125,0.8],
+			0.8: #[0,0,0],
+			0: #[0.125, 0.125, 0.1]
+	),80);
+~perc = Pbind(
+	\\instrument,\\bplay,
+	\\index,Pseq([1,8,3],inf),
+	\\buf,Pfunc({|e| d[\"perc\"][e.index]}),
+	\\dur,l,
+	\\amp,0.5
+)
+)" ], [ 148.37233210998, 'me', "s.meter" ], [ 146.12157324699, 'me', "d[\"kick\"][0].play" ], [ 145.715410684, 'me', "d[\"kick\"][0].play" ], [ 145.58875527399, 'me', "d[\"kick\"][0].play" ], [ 145.40640732998, 'me', "d[\"kick\"][0].play" ], [ 136.65464254998, 'me', "d[\"longSound\"][1].play" ], [ 121.191808623, 'me', "d[\"gesture\"][9].play" ], [ 120.353314821, 'me', "d[\"gesture\"][5].play" ], [ 117.56367571899, 'me', "d[\"gesture\"][3].play" ], [ 115.17996514699, 'me', "d[\"gesture\"][11].play" ], [ 114.20997013699, 'me', "d[\"gesture\"][14].play" ], [ 112.20655527798, 'me', "d[\"gesture\"][10].play" ], [ 106.375322657, 'me', "d[\"perc\"][10].play" ], [ 105.254155773, 'me', "d[\"perc\"][11].play" ], [ 103.981011998, 'me', "d[\"perc\"][12].play" ], [ 102.871004969, 'me', "d[\"perc\"][14].play" ], [ 98.634822202992, 'me', "d[\"perc\"][9].play" ], [ 97.743718680984, 'me', "d[\"perc\"][5].play" ], [ 94.865573260002, 'me', "d[\"perc\"][0].play" ], [ 52.117645808001, 'me', "(
+d[\\addFolder].(\"perc\",thisProcess.nowExecutingPath.dirname ++ \"/Percussion\");
+
+d[\\addFolder].(\"gesture\",thisProcess.nowExecutingPath.dirname ++ \"/Gestures\");
+
+d[\\addFolder].(\"longSound\",thisProcess.nowExecutingPath.dirname ++ \"/LongSound\");
+
+d[\\addFolder].(\"kick\",thisProcess.nowExecutingPath.dirname ++ \"/kick\");
+)" ], [ 50.017680204997, 'me', "(
+d[\\addFolder] = {
+	arg string = \"\", path = \"\";
+	d.add(string -> List.new);
+	path = PathName(path);
+	for(0, path.entries.size-1,
+		{arg i;
+			d[string].add(
+				Buffer.read(s,path.entries[i].fullPath)
+			);
+})}
+)" ], [ 48.238327159983, 'me', "d = Dictionary.new" ], [ 47.719714673003, 'me', "p = ProxySpace.push(s)" ], [ 45.403826227004, 'me', "(
+SynthDef(\\bplay,
+	{arg out = 0, buf = 0, rate = 1, amp = 0.5, pan = 0, pos = 0, rel=15;
+		var sig,env ;
+		sig = Mix.ar(PlayBuf.ar(2,buf,BufRateScale.ir(buf) * rate,1,BufDur.kr(buf)*pos*44100,doneAction:2));
+		env = EnvGen.ar(Env.linen(0.0,rel,0),doneAction:2);
+		sig = sig * env;
+		sig = sig * amp;
+		Out.ar(out,Pan2.ar(sig,pan));
+}).add;
+
+SynthDef(\\vplay,
+	{arg out = 0, buf = 0, rate = 1, amp = 0.5, pan = 0, atk=0.0, sus=1, rel= 0, pos=0;
+		var sig, env;
+		sig = Pan2.ar(PlayBuf.ar(2,buf,BufRateScale.ir(buf) * rate,1,BufDur.kr(buf)*pos*44100,doneAction:2),pan);
+		env = EnvGen.ar(Env.linen(atk,sus,rel,1),doneAction:2);
+		sig = sig * env;
+		sig = sig * amp;
+		Out.ar(out,sig);
+}).add;
+)" ], [ 0, 'me', "s.boot" ] ]

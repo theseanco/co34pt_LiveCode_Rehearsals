@@ -9,7 +9,7 @@ StageLimiter.activate
 
 
 //change clock divisions
-~clk = {Impulse.ar(10)}o
+~clk = {Impulse.ar(10)}
 
 
 (
